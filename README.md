@@ -1,4 +1,4 @@
-# Calculating the fraction of students who convert to paying ones after starting a course on the 365 platform
+# Calculate the fraction of students who convert to paying ones after starting a course on the 365 platform
 ## Overview
 In this project, I will help 365 platform analyze data in a relational database with the goal of estimating the free-to-paid conversion rate among students who’ve engaged with video content on the 365 platform. Moreover, I will also calculate several other key metrics to come up with some interpretations.
 ## Goals
