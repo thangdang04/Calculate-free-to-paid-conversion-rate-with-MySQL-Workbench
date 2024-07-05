@@ -46,7 +46,7 @@ GROUP BY si.student_id
 ```sql
 HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
-- Project's query.
+=> Project's query:
 ```sql
 SELECT 
 si.student_id, si.date_registered, 
@@ -107,7 +107,7 @@ ROUND(SUM(date_diff_reg_watch)/COUNT(date_diff_reg_watch), 2) AS av_reg_watch
 ```sql
 ROUND(SUM(date_diff_watch_purch)/COUNT(date_diff_watch_purch), 2) AS av_watch_purch
 ```
-- Project's query.
+=> Project's query:
 ```sql
 SELECT 
 ROUND(COUNT(first_date_purchased)/COUNT(first_date_watched)*100, 2) AS conversion_rate,
@@ -132,5 +132,16 @@ HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
 ## Interpretations
 ### 1. Free-to-paid conversion rate:
+- The fraction of students who purchase monthly, quarterly, or annual subscriptions from those who watch a lecture is about 11%. For instance, for every 100 students who come to the 365 platform, roughly 11 of them purchase a subscription, which is a relatively low number.
+
+- Firstly, while a significant number of students register on the platform, they aren’t prompted to benefit from the program entirely and hardly purchase subscriptions. One factor contributing to this could be that we’re targeting a broader audience rather than focusing specifically on data science enthusiasts eager to begin their journey in the field.
+
+- Secondly, since the platform targets beginner audiences, students may need clarification about what to start with. Should they first invest weeks in mastering an object-oriented programming language such as Python, a query language such as SQL, or maybe a data visualization software like Tableau? What prerequisites are necessary for each of these tools? A customized learning path for each user will definitely help them know exactly where to start and how to continue.
+
+- Thirdly, some users might need more time to embark on a data science journey. They might be college students whose exam periods have just started or working people who can’t dedicate the desired time.
+
+- Finally, some users might not fancy the platform and would instead take the first steps toward data science elsewhere.
 ### 2. Average duration between registration date and date of first-time engagement:
+- On average, it takes students between three and four days to start watching a lecture after registering on the platform. Ideally, it would be great if a new student started watching a lecture on their first day. Every other element the platform offers (exams, projects, career tracks) requires more attention, while the lessons are easy to check out.
 ### 3. Average duration between date of first-time engagement and date of first-time purchase:
+- On average, it takes students roughly 24 days to purchase a subscription after getting acquainted with the product.
