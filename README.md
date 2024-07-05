@@ -64,7 +64,7 @@ GROUP BY si.student_id
 HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
 ### 2. Create the main query:
-- Surround the created subquery in the previous part (Create the Subquery) in parentheses and give it an alias, say subtable.
+- Surround the created subquery in the previous part (Create the subquery) in parentheses and give it an alias, say subtable.
 ```sql
 FROM (
 SELECT 
