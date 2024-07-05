@@ -16,7 +16,7 @@ In this project, I will help 365 platform analyze data in a relational database 
   - date_diff_reg_watch – (int) the difference in days between the registration date and the date of first-time engagement.
   - date_diff_watch_purch – (int) the difference in days between the date of first-time engagement and the date of first-time purchase (NULL if they have no purchases).
 
-```
+```sql
 FROM 
 student_info AS si
 LEFT JOIN 
@@ -30,7 +30,7 @@ student_purchases AS sp ON si.student_id=sp.student_id
 => The resulting set includes the student IDs of students entering the above diagram’s shaded region.
 
 - Retrieve the columns one by one.
-```
+```sql
 SELECT 
 si.student_id, si.date_registered, 
 MIN(date_watched) AS first_date_watched, 
@@ -39,15 +39,15 @@ DATEDIFF(MIN(date_watched), date_registered) AS date_diff_reg_watch,
 DATEDIFF(MIN(date_purchased), MIN(date_watched)) AS date_diff_watch_purch
 ```
 - Applying the MIN aggregate function in the previous step requires grouping the results.
-```
+```sql
 GROUP BY si.student_id
 ```
 - Filter the data to exclude the records where the date of first-time engagement comes later than the date of first-time purchase, while keeping the students who have never made a purchase.
-```
+```sql
 HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
 - Project's query.
-```
+```sql
 SELECT 
 si.student_id, si.date_registered, 
 MIN(date_watched) AS first_date_watched, 
@@ -65,7 +65,7 @@ HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
 ### 2. Create the main query:
 - Surround the created subquery in the previous part (Create the Subquery) in parentheses and give it an alias, say subtable.
-```
+```sql
 FROM (
 SELECT 
 ...
@@ -84,7 +84,7 @@ HAVING
 
     - The total number of students who have watched a lecture.
   - The result is converted to percentages and the field is called conversion_rate.
-```
+```sql
 ROUND(COUNT(first_date_purchased)/COUNT(first_date_watched)*100, 2) AS conversion_rate
 ```
 - Calculate the average duration between the registration date and the date of first-time engagement:
@@ -94,7 +94,7 @@ ROUND(COUNT(first_date_purchased)/COUNT(first_date_watched)*100, 2) AS conversio
 
     - The count of these durations, or alternatively, the number of students who have watched a lecture.
   - The field is called av_reg_watch.
-```
+```sql
 ROUND(SUM(date_diff_reg_watch)/COUNT(date_diff_reg_watch), 2) AS av_reg_watch
 ```
 - Calculate the average duration between the date of first-time engagement and the date of first-time purchase:
@@ -104,11 +104,11 @@ ROUND(SUM(date_diff_reg_watch)/COUNT(date_diff_reg_watch), 2) AS av_reg_watch
 
     - The count of these durations, or alternatively, the number of students who have made a purchase.
   - The field is called av_watch_purch.
-```
+```sql
 ROUND(SUM(date_diff_watch_purch)/COUNT(date_diff_watch_purch), 2) AS av_watch_purch
 ```
 - Project's query.
-```
+```sql
 SELECT 
 ROUND(COUNT(first_date_purchased)/COUNT(first_date_watched)*100, 2) AS conversion_rate,
 ROUND(SUM(date_diff_reg_watch)/COUNT(date_diff_reg_watch), 2) AS av_reg_watch, 
