@@ -132,16 +132,16 @@ HAVING COALESCE((MIN(date_purchased)), MIN(date_watched)) >= MIN(date_watched)
 ```
 ## Interpretations
 ### 1. Free-to-paid conversion rate:
-- The fraction of students who purchase monthly, quarterly, or annual subscriptions from those who watch a lecture is about 11%. For instance, for every 100 students who come to the 365 platform, roughly 11 of them purchase a subscription, which is a relatively low number.
+- Approximately 11% of students who watch a lecture purchase monthly, quarterly, or yearly subscriptions. For example, just about 11 out of every 100 students that visit the 365 platform end up purchasing a subscription, which is a relatively low number.
 
-- Firstly, while a significant number of students register on the platform, they aren’t prompted to benefit from the program entirely and hardly purchase subscriptions. One factor contributing to this could be that we’re targeting a broader audience rather than focusing specifically on data science enthusiasts eager to begin their journey in the field.
+- Firstly, even if a significant number of students register on the platform, they aren't encouraged to take full advantage of the program and seldom purchase subscriptions. The platform aims for a wider audience instead of data science enthusiasts who are excited to start their career in the industry, which might be one aspect leading to this.
 
-- Secondly, since the platform targets beginner audiences, students may need clarification about what to start with. Should they first invest weeks in mastering an object-oriented programming language such as Python, a query language such as SQL, or maybe a data visualization software like Tableau? What prerequisites are necessary for each of these tools? A customized learning path for each user will definitely help them know exactly where to start and how to continue.
+- Secondly, since the platform targets novice audiences, students might want guidance on where to begin.  Should they initially devote several weeks to learning how to use an object-oriented programming language like Python, a query language such as SQL, or a data visualization software like Tableau? What prerequisites are necessary for each of these tools? A personalized learning path for users will definitely help them know exactly where to start and how to continue.
 
-- Thirdly, some users might need more time to embark on a data science journey. They might be college students whose exam periods have just started or working people who can’t dedicate the desired time.
+- Thirdly, it may take longer for certain users to embark on a data science journey. For example, they might be working people who are unable to commit the necessary time, or they could be college students whose test periods have just begun.
 
-- Finally, some users might not fancy the platform and would instead take the first steps toward data science elsewhere.
+- Finally, some users might not be fond of the platform and choose to begin their data science journey elsewhere.
 ### 2. Average duration between registration date and date of first-time engagement:
-- On average, it takes students between three and four days to start watching a lecture after registering on the platform. Ideally, it would be great if a new student started watching a lecture on their first day. Every other element the platform offers (exams, projects, career tracks) requires more attention, while the lessons are easy to check out.
+- On average, it takes students between three and four days to start watching a lecture after registering on the platform. Ideally, it would be great if a new student started watching a lecture on their first day. Every other element that the platform offers (exams, projects, career tracks) requires more attention, while the lessons should be easier to check out.
 ### 3. Average duration between date of first-time engagement and date of first-time purchase:
-- On average, it takes students roughly 24 days to purchase a subscription after getting acquainted with the product.
+- On average, it takes students roughly 24 days to purchase a subscription after familiarizing themselves with the product.
